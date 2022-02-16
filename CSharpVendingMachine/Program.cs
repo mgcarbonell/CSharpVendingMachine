@@ -8,8 +8,7 @@ namespace CSharpVendingMachine
             VendingMachine vendy3000 = new VendingMachine();
 
             //Console.WriteLine(vendy3000.GetManufacturer());
-            vendy3000.Count = 88;
-            Console.WriteLine("The count is: {0}", vendy3000.Count);
+            vendy3000.PrintFields();
         }
     }
 }
