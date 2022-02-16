@@ -30,6 +30,13 @@ namespace CSharpVendingMachine
         
         }
 
+        public VendingMachine()
+        {
+            _onOff = false;
+            _capacity = 100;
+            _count = 0;
+            _moneyCollected = 0;
+        }
         public void PrintFields()
         {
             Console.WriteLine("Is the machine turned on? {0}", _onOff);
