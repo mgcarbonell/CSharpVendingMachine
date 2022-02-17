@@ -32,32 +32,20 @@ namespace CSharpVendingMachine
 
         public VendingMachine()
         {
-            _onOff = false;
-            _capacity = 100;
-            _count = 10;
-            _moneyCollected = 0;
+            this._onOff = false;
+            this._count = 0;
+            this._moneyCollected = 0;
         }
-        public VendingMachine(bool onOff, int count, int moneyCollected)
+        public VendingMachine(bool onOff, int count)
         {
-            _onOff = onOff;
-            _capacity = 100;
-            if (moneyCollected >= 0)
-            {
-                _moneyCollected = moneyCollected;
-            }
-            else
-            {
-               Console.WriteLine("Invalid monetary value, please enter a positive numeric value.");
-            }
+            this._onOff = onOff;
+            this._count = count;
+        }
 
-            if (count >= 0 && count <= 100)
-            {
-                _count = count;
-            }
-            else
-            {
-                Console.WriteLine("Invalid count value, please enter a numeric value between 0 and 100.");
-            }
+        public VendingMachine(bool onOff, int count, int moneyCollected)
+            : this (onOff,count)
+        {
+            this._moneyCollected = moneyCollected;
         }
         public void PrintFields()
         {
