@@ -1,55 +1,52 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace CSharpVendingMachine
 {
     class MoneyCollector
     {
-        public int moneyCollected;
-        public int productPrice;
-        public int insertedMoney;
+        private int _moneyCollected;
+        private int _productPrice;
+        private int _insertedMoney;
 
         public MoneyCollector()
         {
-            this.moneyCollected = 0;
-            this.productPrice = 2;
-            this.insertedMoney = 0;
+            this._moneyCollected = 0;
+            this._productPrice = 2;
+            this._insertedMoney = 0;
         }
 
         public void AddMoney(int money)
         {
-            this.insertedMoney = money;
-            if (this.insertedMoney >= 0)
+            this._insertedMoney = money;
+            if (this._insertedMoney >= 0)
             {
-                Console.WriteLine("You inserted {0}$", this.insertedMoney);
+                Console.WriteLine("You inserted {0}$", this._insertedMoney);
                 this.Change();
             }
             else Console.WriteLine("Invalid Transaction");
 
-            this.insertedMoney = 0;
+            this._insertedMoney = 0;
         }
 
         public void Change()
         {
-            if (this.insertedMoney >= this.productPrice)
+            if (this._insertedMoney >= this._productPrice)
             {
-                int change = this.insertedMoney - this.productPrice;
-                this.moneyCollected += this.productPrice;
+                int change = this._insertedMoney - this._productPrice;
+                this._moneyCollected += this._productPrice;
                 Console.WriteLine("Your change is: {0}$", change);
             }
             else
             {
                 Console.WriteLine("Insufficient money inserted.");
-                Console.WriteLine("Your change is: {0}$", this.insertedMoney);
+                Console.WriteLine("Your change is: {0}$", this._insertedMoney);
             }
         }
 
         public int GetMoneyCollected()
         {
-            return this.moneyCollected;
+            return this._moneyCollected;
         }
     }
 }
